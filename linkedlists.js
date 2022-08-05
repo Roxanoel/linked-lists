@@ -103,7 +103,7 @@ function LinkedList() {
         
         // Otherwise, traverse list until a match is found
         let current = head;
-        while(current.next != null) {
+        while(current != null) {
             // if value is found return true
             if (current.data === value) return true;
             // Otherwise advance one link in the chain
@@ -112,11 +112,25 @@ function LinkedList() {
         // If the whole chain was traversed without a match, 
         // check if the last link is a match. Otherwise, return
         // false.
-        return current.data === value;
+        return false;
     }
 
     function find(value) {
+        // If list is empty, automatically return null .
+        if (head === null) return null;
 
+
+        // Otherwise, traverse list until a match is found
+        let index = 0; 
+        let current = head;
+
+        while(current != null) {
+            if (current.data === value) return index;
+            index ++;
+            current = current.next;
+        }
+        // If no match was found:
+        return null;
     }
 
     return {
