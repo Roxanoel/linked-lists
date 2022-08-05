@@ -123,10 +123,22 @@ describe.skip('Searching the list', () => {
         linkedList.append(1);
         expect(linkedList.find(1)).toBe(0);
     });
-    
 });
 
 describe.skip('Transform list into string', () => {
-
+    test('toString returns "null" if the list is empty', () => {
+        expect(linkedList.toString()).toBe('null');
+    });
+    test('toString returns correct format when single element', () => {
+        linkedList.append(1);
+        expect(linkedList.toString()).toBe('( 1 ) -> null');
+    });
+    test('toString returns correct format when more than one element', () => {
+        linkedList.append(1);
+        linkedList.append(2);
+        expect(linkedList.toString()).toBe('( 1 ) -> ( 2 ) -> null');
+        linkedList.append(3);
+        expect(linkedList.toString()).toBe('( 1 ) -> ( 1 ) -> ( 3 ) -> null');
+    });
 });
 
