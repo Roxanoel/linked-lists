@@ -20,3 +20,6 @@ Build the following functions in your linked list class:
 - **find(value)** returns the index of the node containing value, or null if not found.
 - **toString** represents your LinkedList objects as strings, so you can print them out and preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
 
+# Testing
+I have included my unit tests in this repository. They can be run by using jest. 
+
