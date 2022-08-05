@@ -1,0 +1,1 @@
+const linkedList = require('./linkedlists');
