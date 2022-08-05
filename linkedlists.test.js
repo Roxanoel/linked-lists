@@ -72,7 +72,7 @@ describe('Retrieving nodes by "index"', () => {
     });
 });
 
-describe.skip('Removing nodes', () => {
+describe('Removing nodes', () => {
     test('pop works for a list of size 1', () => {
         linkedList.append(1);
         linkedList.pop();
@@ -87,9 +87,9 @@ describe.skip('Removing nodes', () => {
     test('pop removes the last element of the list', () => {
         linkedList.append(1);
         linkedList.append(2);
-        expect(linkedList.getTail().value).toBe(2);
+        expect(linkedList.getTail().data).toBe(2);
         linkedList.pop();
-        expect(linkedList.getTail().value).toBe(1);
+        expect(linkedList.getTail().data).toBe(1);
     });
 });
 

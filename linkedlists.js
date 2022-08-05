@@ -78,6 +78,25 @@ function LinkedList() {
         return current;
     }
 
+    function pop() {
+        // If there is no head, return nothing.
+        if (head === null) return;
+        // If there is just one element, reset head to null & return.
+        if (head.next === null) {
+            head = null;
+            return;
+        }
+
+        // Initialize variable to keep track of position in chain
+        let current = head;
+        // Traverse chain until penultimate link
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        // remove last link
+        current.next = null;
+    }
+
     return {
         getHead,  // lol
         getTail,
@@ -85,6 +104,7 @@ function LinkedList() {
         append,
         prepend,
         at,
+        pop,
     }
 }
 
