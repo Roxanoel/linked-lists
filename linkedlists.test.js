@@ -15,10 +15,20 @@ describe('Appending & prepending nodes', () =>
     expect(linkedList.head.data).toBe('value');
     expect(linkedList.head.next).toBe(null);
     });
+    test('prepend(value) on empty list', () => {
+        linkedList.prepend('value');
+        expect(linkedList.head.data).toBe('value');
+        expect(linkedList.head.next).toBe(null);
+    });
     test('append(value) on list which already has a head', () => {
         linkedList.append(1);
         linkedList.append(2);
         expect(linkedList.head.next.value).toBe(2);
+    });
+    test('prepend(value) on list which already has a head', () => {
+        linkedList.append(1);
+        linkedList.prepend(2);
+        expect(linkedList.head.value).toBe(2);
     });
 });
 
