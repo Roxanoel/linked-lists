@@ -63,12 +63,28 @@ function LinkedList() {
         }
     }
 
+    function at(index) {
+        if (head === null) return null;
+
+        // Initialize variable to hold current position in chain 
+        let current = head;
+        // If more than one value, count to the right index
+        for (let i = 0; i < index; i++) {
+            current = current.next;
+        } 
+
+        if (!current) return null;
+
+        return current;
+    }
+
     return {
         getHead,  // lol
         getTail,
         getSize,
         append,
         prepend,
+        at,
     }
 }
 
