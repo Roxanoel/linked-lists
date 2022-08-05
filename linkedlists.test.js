@@ -72,7 +72,7 @@ describe('Retrieving nodes by "index"', () => {
     });
 });
 
-describe.skip('Removing nodes', () => {
+describe('Removing nodes', () => {
     test('pop works for a list of size 1', () => {
         linkedList.append(1);
         linkedList.pop();
@@ -94,7 +94,18 @@ describe.skip('Removing nodes', () => {
 });
 
 describe.skip('Searching the list', () => {
-
+    test('contains returns true if value is in the list', () => {
+        linkedList.append(1);
+        linkedList.append(2);
+        expect(linkedList.contains(1)).toBe(true);
+        expect(linkedList.contains(2)).toBe(true);
+    });
+    test('contains returns false if value is not in the list', () => {
+        expect(linkedList.contains(2)).toBe(false);
+        linkedList.append(1);
+        expect(linkedList.contains(2)).toBe(false);
+    });
+    
 });
 
 describe.skip('Transform list into string', () => {
