@@ -105,6 +105,24 @@ describe.skip('Searching the list', () => {
         linkedList.append(1);
         expect(linkedList.contains(2)).toBe(false);
     });
+    test('find(value) returns null if the list is empty', () => {
+        expect(linkedList.find(1)).toBe(null);
+    });
+    test('find(value) returns null if the value is not contained within', () => {
+        linkedList.append(1);
+        expect(linkedList.find(2)).toBe(null);
+    });
+    test('find(value) returns the index of said value', () => {
+        linkedList.append(1);
+        linkedList.append(2);
+        expect(linkedList.find(1)).toBe(0);
+        expect(linkedList.find(2)).toBe(1);
+    }); 
+    test('find(value) returns first instance of duplicate value', () => {
+        linkedList.append(1);
+        linkedList.append(1);
+        expect(linkedList.find(1)).toBe(0);
+    });
     
 });
 
