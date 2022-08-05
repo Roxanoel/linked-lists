@@ -26,15 +26,27 @@ function LinkedList() {
                 current = current.next;
             }
             // Add new node as next on the last link. 
-            console.log(current);
             current.next = Node(value);
-            console.log(current);
+        }
+    }
+
+    function prepend(value) {
+        // If the list is empty, create new node that will become the head.
+        if (head === null) {
+        head = Node(value);
+        } else {
+            // If there is already a head, store previous head
+            const previousHead = head;
+
+            // update head variable to the new node, with old head as its "next" property. 
+            head = Node(value, previousHead);
         }
     }
 
     return {
         getHead,  // lol
         append,
+        prepend,
     }
 }
 
