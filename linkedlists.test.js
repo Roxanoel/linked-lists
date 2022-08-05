@@ -37,13 +37,13 @@ describe('LinkedList property fields', () => {
         expect(linkedList.getHead()).toBe(null);
     });
     test('tail is null for empty list', () => {
-        expect(linkedList.tail).toBe(null);
+        expect(linkedList.getTail()).toBe(null);
     });
     test('tail is correctly updated when adding a new node', () => {
         linkedList.append(1);
-        expect(linkedList.tail.data).toBe(1);
+        expect(linkedList.getTail().data).toBe(1);
         linkedList.append(2);
-        expect(linkedList.tail.data).toBe(2);
+        expect(linkedList.getTail().data).toBe(2);
     });
     test('size is 0 for empty list', () => {
         expect(size).toBe(0);
@@ -82,14 +82,14 @@ describe.skip('Removing nodes', () => {
         linkedList.append(1);
         linkedList.pop();
         expect(linkedList.getHead()).toBe(null);
-        expect(linkedList.tail).toBe(null);
+        expect(linkedList.getTail()).toBe(null);
     });
     test('pop removes the last element of the list', () => {
         linkedList.append(1);
         linkedList.append(2);
-        expect(linkedList.tail.value).toBe(2);
+        expect(linkedList.getTail().value).toBe(2);
         linkedList.pop();
-        expect(linkedList.tail.value).toBe(1);
+        expect(linkedList.getTail().value).toBe(1);
     });
 });
 

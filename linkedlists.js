@@ -6,6 +6,17 @@ function LinkedList() {
         return head;
     }
 
+    function getTail() {
+        if (head === null) return null;
+        
+        let tail = head;
+
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        return tail;
+    }
+
     // Factories
     function Node(value = null, next = null) {
         return {
@@ -20,13 +31,8 @@ function LinkedList() {
         if (head === null) {
             head = Node(value);
         } else {
-        // If there is already a head, follow chain until the last link
-            let current = head;
-            while(current.next != null) {
-                current = current.next;
-            }
             // Add new node as next on the last link. 
-            current.next = Node(value);
+            getTail().next = Node(value);
         }
     }
 
@@ -45,6 +51,7 @@ function LinkedList() {
 
     return {
         getHead,  // lol
+        getTail,
         append,
         prepend,
     }
