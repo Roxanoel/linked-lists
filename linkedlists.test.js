@@ -125,7 +125,7 @@ describe('Searching the list', () => {
     });
 });
 
-describe.skip('Transform list into string', () => {
+describe('Transform list into string', () => {
     test('toString returns "null" if the list is empty', () => {
         expect(linkedList.toString()).toBe('null');
     });
@@ -138,7 +138,7 @@ describe.skip('Transform list into string', () => {
         linkedList.append(2);
         expect(linkedList.toString()).toBe('( 1 ) -> ( 2 ) -> null');
         linkedList.append(3);
-        expect(linkedList.toString()).toBe('( 1 ) -> ( 1 ) -> ( 3 ) -> null');
+        expect(linkedList.toString()).toBe('( 1 ) -> ( 2 ) -> ( 3 ) -> null');
     });
 });
 

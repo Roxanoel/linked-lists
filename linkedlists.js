@@ -133,6 +133,27 @@ function LinkedList() {
         return null;
     }
 
+    function toString() {
+        // If chain is empty:
+        if (head === null) return 'null';
+
+        // Initialize string 
+        let string = '';
+
+        // Keep track of current link
+        let current = head;
+
+        // Traverse chain & add values to string following template
+        while (current != null) {
+            string = `${string}( ${current.data} ) -> `;
+            current = current.next;
+        }
+        // Add null at the end 
+        string = `${string}null`;
+
+        return string;
+    }
+
     return {
         getHead,  // lol
         getTail,
@@ -143,6 +164,7 @@ function LinkedList() {
         pop,
         contains,
         find,
+        toString,
     }
 }
 
