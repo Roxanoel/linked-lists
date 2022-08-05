@@ -93,7 +93,7 @@ describe('Removing nodes', () => {
     });
 });
 
-describe.skip('Searching the list', () => {
+describe('Searching the list', () => {
     test('contains returns true if value is in the list', () => {
         linkedList.append(1);
         linkedList.append(2);

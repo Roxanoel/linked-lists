@@ -97,6 +97,28 @@ function LinkedList() {
         current.next = null;
     }
 
+    function contains(value) {
+        // If list is empty, automatically return false.
+        if (head === null) return false;
+        
+        // Otherwise, traverse list until a match is found
+        let current = head;
+        while(current.next != null) {
+            // if value is found return true
+            if (current.data === value) return true;
+            // Otherwise advance one link in the chain
+            current = current.next;
+        }
+        // If the whole chain was traversed without a match, 
+        // check if the last link is a match. Otherwise, return
+        // false.
+        return current.data === value;
+    }
+
+    function find(value) {
+
+    }
+
     return {
         getHead,  // lol
         getTail,
@@ -105,6 +127,8 @@ function LinkedList() {
         prepend,
         at,
         pop,
+        contains,
+        find,
     }
 }
 
