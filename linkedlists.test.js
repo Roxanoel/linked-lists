@@ -46,12 +46,12 @@ describe('LinkedList property fields', () => {
         expect(linkedList.getTail().data).toBe(2);
     });
     test('size is 0 for empty list', () => {
-        expect(size).toBe(0);
+        expect(linkedList.getSize()).toBe(0);
     });
     test('size is updated correctly upon adding new elements', () => {
         linkedList.append(1);
         linkedList.append(2);
-        expect(size).toBe(2);
+        expect(linkedList.getSize()).toBe(2);
     });
 });
 
@@ -76,7 +76,7 @@ describe.skip('Removing nodes', () => {
     test('pop works for a list of size 1', () => {
         linkedList.append(1);
         linkedList.pop();
-        expect(linkedList.size).toBe(0);
+        expect(linkedList.getSize()).toBe(0);
     });
     test('popping the only element of a list resets its head and tail', () => {
         linkedList.append(1);

@@ -17,6 +17,20 @@ function LinkedList() {
         return tail;
     }
 
+    function getSize() {
+        if (head === null) return 0;
+
+        let count = 1; 
+        let current = head;
+
+        while(current.next != null) {
+            count ++;
+            current = current.next;
+        }
+
+        return count;
+    }
+
     // Factories
     function Node(value = null, next = null) {
         return {
@@ -52,6 +66,7 @@ function LinkedList() {
     return {
         getHead,  // lol
         getTail,
+        getSize,
         append,
         prepend,
     }
