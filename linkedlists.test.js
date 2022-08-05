@@ -55,8 +55,21 @@ describe('LinkedList property fields', () => {
     });
 });
 
-describe.skip('Retrieving nodes', () => {
-
+describe('Retrieving nodes by "index"', () => {
+    test('at(index) works on a list of size 1', () => {
+        linkedList.append(1);
+        expect(linkedList.at(0).value).toBe(1);
+    });
+    test('at(index) returns null if the index overflows the list', () => {
+        linkedList.append(1);
+        expect(linkedList.at(1).value).toBe(null);
+    });
+    test('at(index) works for a larger list', () => {
+        for(let i = 1; i < 6; i++) {
+            linkedList.append(i);  // 1(head) -> 2 -> 3 -> 4 -> 5(tail) -> null
+        }
+        expect(linkedList.at(2)).toBe(3);
+    });
 });
 
 describe.skip('Removing nodes', () => {
