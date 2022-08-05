@@ -13,28 +13,28 @@ describe('Appending & prepending nodes', () =>
     test('append(value) on empty list', () => {
     linkedList.append('value');
     expect(linkedList.getHead().data).toBe('value');
-    expect(linkedList.head.next).toBe(null);
+    expect(linkedList.getHead().next).toBe(null);
     });
     test('prepend(value) on empty list', () => {
         linkedList.prepend('value');
-        expect(linkedList.head.data).toBe('value');
-        expect(linkedList.head.next).toBe(null);
+        expect(linkedList.getHead().data).toBe('value');
+        expect(linkedList.getHead().next).toBe(null);
     });
     test('append(value) on list which already has a head', () => {
         linkedList.append(1);
         linkedList.append(2);
-        expect(linkedList.head.next.value).toBe(2);
+        expect(linkedList.getHead().next.data).toBe(2);
     });
     test('prepend(value) on list which already has a head', () => {
         linkedList.append(1);
         linkedList.prepend(2);
-        expect(linkedList.head.value).toBe(2);
+        expect(linkedList.getHead().data).toBe(2);
     });
 });
 
 describe('LinkedList property fields', () => {
     test('head is null for empty list', () => {
-        expect(linkedList.head).toBe(null);
+        expect(linkedList.getHead()).toBe(null);
     });
     test('tail is null for empty list', () => {
         expect(linkedList.tail).toBe(null);
@@ -81,7 +81,7 @@ describe.skip('Removing nodes', () => {
     test('popping the only element of a list resets its head and tail', () => {
         linkedList.append(1);
         linkedList.pop();
-        expect(linkedList.head).toBe(null);
+        expect(linkedList.getHead()).toBe(null);
         expect(linkedList.tail).toBe(null);
     });
     test('pop removes the last element of the list', () => {
